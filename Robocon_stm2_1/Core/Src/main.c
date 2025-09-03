@@ -142,34 +142,36 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,500);
+	  /*
+	  __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,500);//PWM5
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,500);
+	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,500);//PWM test
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,500);
+	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,500);//PWM4
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,500);
+	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,500);//PWM3
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,500);
+	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,500);//PWM2
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,500);
+	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,500);//PWM1
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim17,TIM_CHANNEL_1,500);
+	  __HAL_TIM_SET_COMPARE(&htim17,TIM_CHANNEL_1,500);//PWM6
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim17,TIM_CHANNEL_1,2200);
 	  HAL_Delay(2000);
+	  */
   }
      void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
      printf("CAN Receiver\r\n");
@@ -184,6 +186,58 @@ int main(void)
      printf("%d\r\n",use_data[7]);
 
      HAL_Delay(500);
+
+     if(use_data[0] = 1){
+       __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,500);//PWM5
+       HAL_Delay(2000);
+       __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,2200);
+       HAL_Delay(2000);
+     }
+
+     if(use_data[1] = 1){
+    	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,500);//PWM test
+    	 HAL_Delay(2000);
+    	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2200);
+    	 HAL_Delay(2000);
+     }
+
+     if(use_data[2] = 1){
+    	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,500);//PWM4
+    	 HAL_Delay(2000);
+    	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2200);
+    	 HAL_Delay(2000);
+     }
+
+     if(use_data[3] = 1){
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,500);//PWM3
+         HAL_Delay(2000);
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,2200);
+    	 HAL_Delay(2000);
+     }
+
+     if(use_data[4] = 1){
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,500);//PWM2
+    	 HAL_Delay(2000);
+         __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_3,2200);
+    	 HAL_Delay(2000);
+     }
+
+     if(use_data[5] = 1){
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,500);//PWM1
+    	HAL_Delay(2000);
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_4,2200);
+        HAL_Delay(2000);
+     }
+
+     if(use_data[6] = 1){
+    	 __HAL_TIM_SET_COMPARE(&htim17,TIM_CHANNEL_1,500);//PWM6
+    	 HAL_Delay(2000);
+    	 __HAL_TIM_SET_COMPARE(&htim17,TIM_CHANNEL_1,2200);
+    	 HAL_Delay(2000);
+     }
+    	    /* USER CODE BEGIN 3 */
+
+     }
 
   /* USER CODE END 3 */
 }
