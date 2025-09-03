@@ -1,17 +1,48 @@
-13:21:57 **** Incremental Build of configuration Debug for project Robocon_stm2_1 ****
+15:25:04 **** Incremental Build of configuration Debug for project Robocon_stm2_1 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Robocon_stm2_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\CUBEIDE_Workspace\STM_2025_robocon\Robocon_stm2_1\STM32F303K8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Robocon_stm2_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Robocon_stm2_1.elf
- 
-arm-none-eabi-size  Robocon_stm2_1.elf 
-arm-none-eabi-objdump -h -S Robocon_stm2_1.elf  > "Robocon_stm2_1.list"
-   text	   data	    bss	    dec	    hex	filename
-  17800	     12	   2052	  19864	   4d98	Robocon_stm2_1.elf
-Finished building: default.size.stdout
- 
-Finished building: Robocon_stm2_1.list
- 
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f3xx_hal_msp.d" -MT"Core/Src/stm32f3xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f3xx_it.d" -MT"Core/Src/stm32f3xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:177:6: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  177 |      printf("CAN Receiver\r\n");
+      |      ^~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:177:6: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  177 |      printf("CAN Receiver\r\n");
+      |      ^~~~~~
+../Core/Src/main.c:177:6: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:190:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  190 |      if(use_data[0] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c:197:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  197 |      if(use_data[1] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c:204:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  204 |      if(use_data[2] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c:211:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  211 |      if(use_data[3] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c:218:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  218 |      if(use_data[4] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c:225:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  225 |      if(use_data[5] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c:232:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  232 |      if(use_data[6] = 1){
+      |         ^~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:243:1: error: expected identifier or '(' before '}' token
+  243 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
 
-13:21:58 Build Finished. 0 errors, 0 warnings. (took 1s.31ms)
+15:25:06 Build Failed. 3 errors, 9 warnings. (took 2s.93ms)
 

@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include <stdio.h>
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -151,9 +151,9 @@ int main(void)
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_2,2200);
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,500);//PWM4
+	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,500);//PWM4
 	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2200);
+	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,2200);
 	  HAL_Delay(2000);
 	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,500);//PWM3
 	  HAL_Delay(2000);
@@ -202,9 +202,9 @@ int main(void)
      }
 
      if(use_data[2] = 1){
-    	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,500);//PWM4
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,500);//PWM4
     	 HAL_Delay(2000);
-    	 __HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_4,2200);
+    	 __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1,2200);
     	 HAL_Delay(2000);
      }
 
@@ -469,10 +469,6 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
-  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_4) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
@@ -528,6 +524,10 @@ static void MX_TIM3_Init(void)
   sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
   if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
